@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Aplicación web APPAOE" name="description">
+    <meta content="APPAOE" name="author">
+
+    <title>APPAOE</title>
+
+    <link href="assets/img/ico/ico-paoe.png" rel="icon" type="image/png">
+    <link href="assets/img/ico/ico-paoe.png" rel="shortcut icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <button class="mobile-nav-toggle d-xl-none" type="button"><i class="icofont-navigation-menu"></i></button>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <a href="/"><img alt="" class="img-fluid rounded-circle" src="assets/img/paoe.png"></a>
+                <h1 class="text-light">Nombre del Admin</h1>
+                <div class="social-links mt-3 text-center">
+                    
+                    <a class="facebook" href="https://www.facebook.com/usbdebogota"><i class="bx bxl-facebook"></i></a>
+                    <a class="twitter" href="https://twitter.com/usbbog?lang=es"><i class="bx bxl-twitter"></i></a>
+                    <a class="instagram" href="https://www.instagram.com/usbbog/?hl=es"><i class="bx bxl-instagram"></i></a>
+                    <a class="linkedin" href="https://www.linkedin.com/school/u-de-san-buenaventura-bogota/?originalSubdomain=co"><i class="bx bxl-linkedin"></i></a>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="/appaoe-web/inicio"><i class="bx bx-home"></i> <span>Inicio</span></a></li>
+                    <li><a href="#psicologo"><i class="bx bx-user"></i> <span>Registrar Psicólogo</span></a></li>
+                    
+                </ul>
+            </nav>
+            <!-- .nav-menu -->
+            <button class="mobile-nav-toggle d-xl-none" type="button"><i class="icofont-navigation-menu"></i></button>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Portada Section ======= -->
+        <section class="d-flex flex-column justify-content-center align-items-center" id="portada">
+            <div class="portada-container" data-aos="fade-in">
+                <h1>APPAOE</h1>
+                <p>Una aplicación <span class="typed" data-typed-items="optima, confiable, accessible, segura"></span></p>
+            </div>
+        </section>
+        <!-- End Portada -->
+
+        <!-- Sección Registrar Psicologo -->
+        <section class="contact" id="psicologo">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Registrar Psicólogo</h2>
+                </div>
+                <div class="row" data-aos="fade-in">
+                    <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form class="php-email-form" id="form-solicitante" method="post" action="assets/php/sendemail.php " role="form">
+                            <div class="form-group">
+                                <label for="cedula">Cédula</label>
+                                <input class="form-control" data-msg="Por favor ingrese una cédula valida" data-rule="required" id="cedula" name="cedula" type="number"/>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="p-nombre">Primer Nombre</label>
+                                    <input class="form-control" data-msg="Por favor ingrese un nombre valido" data-rule="required" id="p-nombre" name="p-nombre" type="text" />
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="s-nombre">Segundo Nombre</label>
+                                    <input class="form-control" data-msg="Por favor ingrese un nombre valido" data-rule="required" id="s-nombre" name="s-nombre" type="text"/>
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="p-apellido">Primer Apellido</label>
+                                    <input class="form-control" data-msg="Por favor ingrese un apellido valido" data-rule="required" id="p-apellido" name="p-apellido" type="text" />
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="s-apellido">Segundo Apellido</label>
+                                    <input class="form-control" data-msg="Por favor ingrese un apellido valido" data-rule="required" id="s-apellido" name="s-apellido" type="text"/>
+                                    <div class="validate"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edad">Edad</label>
+                                <input class="form-control" data-msg="Por favor ingrese una edad valida" data-rule="required" id="edad" name="edad" type="number"/>
+                                <div class="validate"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form class="php-email-form" method="post" action="assets/php/sendemail.php " role="form">
+                            <div class="form-group">
+                                <label for="c-electo">Correo electrónico</label>
+                                <input class="form-control" data-msg="Por favor ingrese un correo electrónico valido" data-rule="required" id="c-electo" name="c-electo" type="text"/>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cedula">Contraseña</label>
+                                <input class="form-control" data-msg="Por favor ingrese uan cedula valida" data-rule="required" id="cedula" name="cedula" type="text"/>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cedula">Repita la Contraseña</label>
+                                <input class="form-control" data-msg="Por favor ingrese uan cedula valida" data-rule="required" id="cedula" name="cedula" type="text"/>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input class="form-control" data-msg="Por favor ingrese una edad valida" data-rule="required" id="telefono" name="telefono" type="number"/>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin seccion Registrar Psicologo-->
+
+
+
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                
+                <br>
+                <br> &copy; 2022 
+                <strong>
+                    <br>
+                    <span>Todos derechos reservados</span>
+                </strong>
+                    <br>
+                    <span>Juan Nicolás Montes Cetina</span>
+                    <br>
+                    <span>Juan Sebastián Rodríguez Correa</span>
+                    <br>
+                    <span>Santiago Echeverri Duque</span>
+                
+                
+            </div>
+        </div>
+    </footer>
+    <!-- End  Footer -->
+
+    <a class="back-to-top" href="#"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

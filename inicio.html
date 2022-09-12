@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Aplicación web APPAOE" name="description">
+    <meta content="APPAOE" name="author">
+
+    <title>APPAOE</title>
+
+    <link href="assets/img/ico/ico-paoe.png" rel="icon" type="image/png">
+    <link href="assets/img/ico/ico-paoe.png" rel="shortcut icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <button class="mobile-nav-toggle d-xl-none" type="button"><i class="icofont-navigation-menu"></i></button>
+
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <a href="#portada"><img alt="" class="img-fluid rounded-circle" src="assets/img/paoe.png"></a>
+                <h1 class="text-light">Nombre del Psicólogo</h1>
+                <div class="social-links mt-3 text-center">
+                    
+                    <a class="facebook" href="https://www.facebook.com/usbdebogota"><i class="bx bxl-facebook"></i></a>
+                    <a class="twitter" href="https://twitter.com/usbbog?lang=es"><i class="bx bxl-twitter"></i></a>
+                    <a class="instagram" href="https://www.instagram.com/usbbog/?hl=es"><i class="bx bxl-instagram"></i></a>
+                    <a class="linkedin" href="https://www.linkedin.com/school/u-de-san-buenaventura-bogota/?originalSubdomain=co"><i class="bx bxl-linkedin"></i></a>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="#portada"><i class="bx bx-home"></i> <span>Inicio</span></a></li>
+                    <!-- <li><a href="#solicitante"><i class="bx bx-user"></i> <span>Registrar Psicólogo</span></a></li> -->
+                    <li><a href="#solicitante"><i class="bx bx-file-blank"></i> <span>Registrar Solicitante</span></a></li>
+                    <li><a href="#asesoria"><i class="bx bx-book-content"></i>Asesoría</a></li>
+                    <li><a href="#historial"><i class="bx bx-history"></i> Historial</a></li>
+                    
+                </ul>
+            </nav>
+            <!-- .nav-menu -->
+            <button class="mobile-nav-toggle d-xl-none" type="button"><i class="icofont-navigation-menu"></i></button>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Portada Section ======= -->
+        <section class="d-flex flex-column justify-content-center align-items-center" id="portada">
+            <div class="portada-container" data-aos="fade-in">
+                <h1>APPAOE</h1>
+                <p>Una aplicación <span class="typed" data-typed-items="optima, confiable, accessible, segura"></span></p>
+            </div>
+        </section>
+        <!-- End Portada -->
+
+        <!-- Sección Registrar Solicitante -->
+        <section class="contact" id="solicitante">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Registrar Solicitante</h2>
+                </div>
+                <div class="row" data-aos="fade-in">
+                    <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form class="php-email-form" id="form-solicitante" method="post" action="assets/php/sendemail.php " role="form">
+                            <div class="form-group">
+                                <label for="identidad">Documento de Identidad</label>
+                                <input class="form-control" data-msg="Por favor ingrese un documento de identidad valido" data-rule="required" id="identidad" name="identidad" type="number"/>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="t-consultante">Tipo de consultante</label>
+                                <select class="form-control" name="select" data-msg="Por favor seleccione una opción valida" data-rule="required" id="t-consultante" name="t-consultante">
+                                    <option value=" "></option>
+                                    <option value="estudiante">Estudiante</option>
+                                    <option value="padres">Padres</option>
+                                    <option value="familia">Familia</option>
+                                    <option value="profesor">Profesor</option>
+                                    <option value="d-programa">Director de programa</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="p-nombre">Primer Nombre</label>
+                                    <input class="form-control" data-msg="Por favor ingrese un nombre valido" data-rule="required" id="p-nombre" name="p-nombre" type="text" />
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="s-nombre">Segundo Nombre</label>
+                                    <input class="form-control" data-msg="Por favor ingrese un nombre valido" data-rule="required" id="s-nombre" name="s-nombre" type="text"/>
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="p-apellido">Primer Apellido</label>
+                                    <input class="form-control" data-msg="Por favor ingrese un apellido valido" data-rule="required" id="p-apellido" name="p-apellido" type="text" />
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="s-apellido">Segundo Apellido</label>
+                                    <input class="form-control" data-msg="Por favor ingrese un apellido valido" data-rule="required" id="s-apellido" name="s-apellido" type="text"/>
+                                    <div class="validate"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="genero">Género</label>
+                                <select class="form-control" data-msg="Por favor seleccione una opción valida" data-rule="required" id="genero" name="genero">
+                                    <option value=" "></option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigo">Código</label>
+                                <input class="form-control" data-msg="Por favor ingrese un código valido" data-rule="required" id="codigo" name="codigo" type="number"/>
+                                <div class="validate"></div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form class="php-email-form" method="post" action="assets/php/sendemail.php " role="form">
+                            <div class="form-group">
+                                <label for="telefono">Teléfono Fijo</label>
+                                <input class="form-control" data-msg="Por favor ingrese un teléfono fijo de identidad valido" data-rule="required" id="telefono" name="telefono" type="number"/>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="localidad">Localidad o Municipio</label>
+                                <select class="form-control" data-msg="Por favor seleccione una opción valida" data-rule="required" id="genero" name="genero">
+                                    <option value=" "></option>
+                                    <option value="a-narino">Antonio Nariño</option>
+                                    <option value="b-unidos">Barrios Unidos</option>
+                                    <option value="bosa">Bosa</option>
+                                    <option value="chapi">Chapinero</option>
+                                    <option value="chia">Chía</option>
+                                    <option value="c-bolivar">Ciudad Bolívar</option>
+                                    <option value="cogua">Cógua</option>
+                                    <option value="engativa">Engativá</option>
+                                    <option value="fontibon">Fontibón</option>
+                                    <option value="kennedy">Kennedy</option>
+                                    <option value="candelaria">La Candelaria</option>
+                                    <option value="martires">Los Mártires</option>
+                                    <option value="madrid">Madrid</option>
+                                    <option value="mosquera">Mosquera</option>
+                                    <option value="p-aranda">Puente Aranda</option>
+                                    <option value="r-u-uribe">Rafael Uribe Uribe</option>
+                                    <option value="cristobal">San Cristóbal</option>
+                                    <option value="santa-fe">Santa Fe</option>
+                                    <option value="sequile">Sesquilé</option>
+                                    <option value="soacha">Soacha</option>
+                                    <option value="suba">Suba</option>
+                                    <option value="sumapaz">Sumapaz</option>
+                                    <option value="tabio">Tabio</option>
+                                    <option value="tenjo">Tenjo</option>
+                                    <option value="teusaquillo">Teusaquillo</option>
+                                    <option value="tocancipa">Tocancipá</option>
+                                    <option value="tunju">Tunjuelito</option>
+                                    <option value="usaquen">Usaquén</option>
+                                    <option value="usme">Usme</option>
+                                    <option value="zipa">Zipaquirá</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edad">Edad</label>
+                                <input class="form-control" data-msg="Por favor ingrese una edad valida" data-rule="required" id="edad" name="edad" type="number"/>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="financiacion">Financiación</label>
+                                <select class="form-control" data-msg="Por favor seleccione una opción valida" data-rule="required" id="financiacion" name="financiacion">
+                                    <option value=" "></option>
+                                    <option value="estudiante">Estudiante regular</option>
+                                    <option value="padres">Icetex</option>
+                                    <option value="familia">Beca</option>
+                                    <option value="profesor">Convenio</option>
+                                    <option value="otro">Entidades financieras</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="facultad">Facultad</label>
+                                <select class="form-control" data-msg="Por favor seleccione una opción valida" data-rule="required" id="facultad" name="facultad">
+                                    <option value=" "></option>
+                                    <option value="ingenieria">Ingeniería</option>
+                                    <option value="c-humanas">Ciencias Humanas y Sociales</option>
+                                    <option value="c-economicas">Ciencias Económicas y Administrativas</option>
+                                    <option value="c-juridicas">Ciencias Jurídicas y Políticas</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="programa">Programa</label>
+                                <select class="form-control" data-msg="Por favor seleccione una opción valida" data-rule="required" id="programa" name="programa">
+                                    <option value=" "></option>
+                                    <option value="estudiante">Administración de Empresas</option>
+                                    <option value="padres">Ciencia Política</option>
+                                    <option value="familia">Contaduría Pública</option>
+                                    <option value="profesor">Derecho</option>
+                                    <option value="economia">Economía</option>
+                                    <option value="economia">Ingeniería Aeronáutica</option>
+                                    <option value="economia">Ingeniería de Sistemas</option>
+                                    <option value="economia">Ingeniería de Sonido</option>
+                                    <option value="economia">Ingeniería Electrónica</option>
+                                    <option value="economia">Ingeniería Mecatrónica</option>
+                                    <option value="economia">Ingeniería Multimedia</option>
+                                    <option value="economia">Licenciatura en Educación para la Primera Infancia</option>
+                                    <option value="economia">Licenciatura en Filosofía</option>
+                                    <option value="economia">Licenciatura en Lengua Inglesa</option>
+                                    <option value="economia">Licenciatura en Teología</option>
+                                    <option value="economia">Posgrado</option>
+                                    <option value="economia">Psicología</option>
+                                    <option value="economia">Relaciones Internacionales</option>
+                                    <option value="economia">Tecnología en Automatización Industrial</option>
+                                    <option value="economia">Tecnología en Desarrollo de Sistemas Eelectrónicos y de Telecomunicaciones</option>
+                                    <option value="economia">Tecnología en Desarrollo de Software</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="semestre">Semestre</label>
+                                <select class="form-control"  data-msg="Por favor seleccione una opción valida" data-rule="required" id="semestre" name="semestre">
+                                    <option value=" "></option>
+                                    <option value="uno">1</option>
+                                    <option value="dos">2</option>
+                                    <option value="tres">3</option>
+                                    <option value="cuatro">4</option>
+                                    <option value="cinco">5</option>
+                                    <option value="seis">6</option>
+                                    <option value="siete">7</option>
+                                    <option value="ocho">8</option>
+                                    <option value="nueve">9</option>
+                                    <option value="diez">10</option>
+                                    <option value="ninguna"> N/A </option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Tu mensaje se ha enviado, ¡Muchas gracias!</div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin seccion Registrar Solicitante-->   
+        
+        <!-- Sección Asesoria -->
+        <section class="contact" id="asesoria">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Asesoría</h2>
+                </div>
+                <div class="row" data-aos="fade-in">
+                    <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form class="php-email-form" id="form-solicitante" method="post" action="assets/php/sendemail.php " role="form">
+                            <div class="form-group">
+                                <label for="num-asesoria">Número de Asesoría</label>
+                                <input class="form-control" data-msg="Por favor ingrese un documento de identidad valido" data-rule="required" id="identidad" name="identidad" type="number"/>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="t-acompanamiento">Tipo de acompañamiento</label>
+                                <select class="form-control" name="select" data-msg="Por favor seleccione una opción valida" data-rule="required" id="t-acompanamiento" name="t-acompanamiento">
+                                    <option value=" "></option>
+                                    <option value="grupal">Grupal</option>
+                                    <option value="individual">Individual</option>
+                                    <option value="familia">Familia</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="a-servicio">Acceso al servicio</label>
+                                <select class="form-control" name="select" data-msg="Por favor seleccione una opción valida" data-rule="required" id="a-servicio" name="a-servicio">
+                                    <option value=" "></option>
+                                    <option value="i-propia">Iniciativa propia</option>
+                                    <option value="remision">Remisión</option>
+                                    <option value="citacion">Citación</option>
+                                    <option value="s-reintegro">Seguimiento por Reintegro</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="remitido-por">Remitido Por</label>
+                                <select class="form-control" name="select" data-msg="Por favor seleccione una opción valida" data-rule="required" id="remitido-por" name="remitido-por">
+                                    <option value=" "></option>
+                                    <option value="docente">Docente</option>
+                                    <option value="d-programa">Director de programa</option>
+                                    <option value="decano">Decano</option>
+                                    <option value="s-familiar">Solicitud de familiar</option>
+                                    <option value="coordinador">Coordinador</option>
+                                    <option value="a-espiritual">Asesoría espiritual</option>
+                                    <option value="ninguna">N/A</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="p-referdia">Problematica Referida/Trabajada</label>
+                                <select class="form-control" name="select" data-msg="Por favor seleccione una opción valida" data-rule="required" id="p-referdia" name="p-referdia">
+                                    <option value=" "></option>
+                                    <option value="deficit">Déficit académico y cognitivo </option>
+                                    <option value="biop">Biopsicosocial</option>
+                                    <option value="socio">Socioeconómico</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="a-realizadas">Acciones Realizadas</label>
+                                <input class="form-control" data-rule="required" id="a-realizadas" name="a-realizadas" type="text"/>
+                                <div class="validate"></div>
+                            </div>  
+                            <div class="form-group">
+                                <label for="asistencia">Asistencia</label>
+                                <select class="form-control" name="select" data-msg="Por favor seleccione una opción valida" data-rule="required" id="asistencia" name="asistencia">
+                                    <option value=" "></option>
+                                    <option value="asistio">Asistió</option>
+                                    <option value="no-asistio">No Asistió</option>
+                                    <option value="reprogramo">Reprogramo</option>
+                                    <option value="cancelo">Canceló</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>   
+                            <div class="form-group">
+                                <label for="culminacion">Culminación</label>
+                                <select class="form-control" name="select" data-msg="Por favor seleccione una opción valida" data-rule="required" id="culminacion" name="culminacion">
+                                    <option value=" "></option>
+                                    <option value="a-espiritual">Asesoría espiritual</option>
+                                    <option value="cap">CAP</option>
+                                    <option value="c-juridico">Consultorio Jurídico</option>
+                                    <option value="d-bienestar">Dirección de Bienestar Institucional</option>
+                                    <option value="d-programa">Director de programa</option>
+                                    <option value="eps">EPS</option>
+                                    <option value="financiera">Financiera</option>
+                                    <option value="p-bienestar">Psicólogo Bienestar Insitucional</option>
+                                    <option value="r-academico">Registro académico</option>
+                                    <option value="t-consejeria">Talleres Consejería Académica</option>
+                                    <option value="t-academica">Tutoría Académica</option>
+                                    <option value="otro">Otro</option>
+                                    
+                                </select>
+                                <div class="validate"></div>
+                            </div>         
+                            <div class="form-group">
+                                <label for="remitido-a">Remitido a</label>
+                                <select class="form-control" name="select" data-msg="Por favor seleccione una opción valida" data-rule="required" id="remitido-a" name="remitido-a">
+                                    <option value=" "></option>
+                                    <option value="abandono">Abandono</option>
+                                    <option value="cierre">Cierre</option>
+                                    <option value="continua">Continúa</option>
+                                    <option value="seguimiento">Seguimiento</option>
+                                </select>
+                                <div class="validate"></div>
+                            </div>                
+                        </form>
+                    </div>
+
+                    <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form class="php-email-form" method="post" action="assets/php/sendemail.php " role="form">
+                            <div class="form-group">
+                                <h2>Información del Solicitante</h2>
+                                <br>
+                                <br>
+                                <p><strong>Nombre del Solicitante</strong></p>
+                                <br>
+                                <p><strong>Código</strong></p>
+                                <br>
+                                <p><strong>Edad</strong></p>
+                                <br>
+                                <p><strong>Programa</strong></p>
+                                <br>
+                                <p><strong>Semestre</strong></p>
+                                <br>
+                                <p><strong>Observaciones</strong></p>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control"  name="message" id="observaciones" rows="10"></textarea>
+                                <div class="validate"></div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Tu mensaje se ha enviado, ¡Muchas gracias!</div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin seccion Asesoria --> 
+
+        <!-- Sección HIstorial -->
+        <section class="contact" id="historial">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Historial</h2>
+                </div>
+                <div class="row" data-aos="fade-in">
+                    <div class="col-lg-13 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form class="php-email-form" id="historial" method="post" action="assets/php/sendemail.php " role="form">
+                            <div class="form-group">
+                                <table class="table">
+                                    <thead>
+                                        <th>Documento</th>
+                                        <th>Tipo de Solicitante</th>
+                                        <th>Nombres</th>
+                                        <th>Apellidos</th>
+                                        <th>Teléfono</th>
+                                        <th>Localidad</th>
+                                        <th>Edad</th>
+                                        <th>Género</th>
+                                        <th>Financiación</th>
+                                        <th>Código</th>
+                                        <th>Semestre</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1025899741</td>
+                                            <td>Estudiante</td>
+                                            <td>Pedro</td>
+                                            <td>Wayne</td>
+                                            <td>3152608090</td>
+                                            <td>Rafael Uribe Uribe</td>
+                                            <td>30</td>
+                                            <td>Masculino</td>
+                                            <td>ICETEX</td>
+                                            <td>30000050198</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10255264</td>
+                                            <td>Estudiante</td>
+                                            <td>Arnulfo</td>
+                                            <td>Picapiedra</td>
+                                            <td>3152607458</td>
+                                            <td>Mosquera</td>
+                                            <td>40</td>
+                                            <td>Masculino</td>
+                                            <td>ICETEX</td>
+                                            <td>300000504159</td>
+                                            <td>9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1025899741</td>
+                                            <td>Estudiante</td>
+                                            <td>Mayerli</td>
+                                            <td>Pregonas</td>
+                                            <td>3152609854</td>
+                                            <td>Kennedy</td>
+                                            <td>23</td>
+                                            <td>Femenino</td>
+                                            <td>ICETEX</td>
+                                            <td>30000059658</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10255264</td>
+                                            <td>Estudiante</td>
+                                            <td>Pepito</td>
+                                            <td>Contreras</td>
+                                            <td>3152607458</td>
+                                            <td>Mosquera</td>
+                                            <td>40</td>
+                                            <td>Masculino</td>
+                                            <td>ICETEX</td>
+                                            <td>300000504159</td>
+                                            <td>9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10255264</td>
+                                            <td>Estudiante</td>
+                                            <td>Rosa</td>
+                                            <td>Reyes</td>
+                                            <td>3152607458</td>
+                                            <td>Mosquera</td>
+                                            <td>40</td>
+                                            <td>Masculino</td>
+                                            <td>ICETEX</td>
+                                            <td>300000504159</td>
+                                            <td>9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10255264</td>
+                                            <td>Estudiante</td>
+                                            <td>Camilo</td>
+                                            <td>Matinez</td>
+                                            <td>3152607458</td>
+                                            <td>Mosquera</td>
+                                            <td>40</td>
+                                            <td>Masculino</td>
+                                            <td>ICETEX</td>
+                                            <td>300000504159</td>
+                                            <td>9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10255264</td>
+                                            <td>Estudiante</td>
+                                            <td>Rafael</td>
+                                            <td>Correa</td>
+                                            <td>3152607458</td>
+                                            <td>Mosquera</td>
+                                            <td>40</td>
+                                            <td>Masculino</td>
+                                            <td>ICETEX</td>
+                                            <td>300000504159</td>
+                                            <td>9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10255264</td>
+                                            <td>Estudiante</td>
+                                            <td>Fabian</td>
+                                            <td>Cortez</td>
+                                            <td>3152607458</td>
+                                            <td>Mosquera</td>
+                                            <td>40</td>
+                                            <td>Masculino</td>
+                                            <td>ICETEX</td>
+                                            <td>300000504159</td>
+                                            <td>9</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section></section>
+        <!-- Fin seccion Historial-->  
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                
+                <br>
+                <br> &copy; 2022 
+                <strong>
+                    <br>
+                    <span>Todos derechos reservados</span>
+                </strong>
+                    <br>
+                    <span>Juan Nicolás Montes Cetina</span>
+                    <br>
+                    <span>Juan Sebastián Rodríguez Correa</span>
+                    <br>
+                    <span>Santiago Echeverri Duque</span>
+                
+                
+            </div>
+        </div>
+    </footer>
+    <!-- End  Footer -->
+
+    <a class="back-to-top" href="#"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style2.css">
+</head>
+<body>
+    
+    <?php if (!empty($message)) : ?>
+        <p><?= $message ?></p>
+    <?php endif; ?>
+
+        <form class="formulario" action="assets/php/login.php" method="post">
+            <h1>Iniciar Sesión</h1>
+            <div class="contenedor">
+                <div class="input-contenedor">
+                    <i class="bx bx-user icon"></i>
+                    <input type="text" name="correo" placeholder="Ingrese su correo electrónico">
+                </div>
+                <div class="input-contenedor">
+                    <i class="bx bx-key icon"></i>
+                    <input type="password" name="contrasena" placeholder="Ingrese su contraseña">
+                </div>
+                <input type="submit" value="Acceder">
+                <p><a class="link" href="assets/php/recuperar.php" style="text-decoration:none">¿Olvidó su contraseña?</a><p>
+            </div>
+        </form>
+</body>
+</html>

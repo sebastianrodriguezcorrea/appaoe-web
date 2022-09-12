@@ -1,0 +1,91 @@
+body {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    background: url(../img/usbbog2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.contenedor{
+    width: 100%;
+    padding: 15px;
+}
+
+.formulario{
+    background: #fff;
+    margin-top: 150px;
+    padding: 3px;
+}
+
+h1{
+    text-align: center;
+    color: #000000;
+    font-size: 40px;
+}
+
+input[type="text"], input[type="password"] {
+    font-size: 18px;
+    width: 82%;
+    padding: 10px;
+    font-family: "Nunito", sans-serif; 
+    border-color: rgb(212, 212, 212);
+    outline: 0 none; 
+}
+
+input[type="submit"] {
+    background: #F18A19;
+    border: 0;
+    padding: 10px 24px;
+    color: #ffffff;
+    transition: 0.4s;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 28%;
+    font-family: "Nunito", sans-serif;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.input-contenedor{
+    margin-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.icon{
+    font-size: 25px;
+    min-width: 50px;
+    text-align: center;
+    color: #F18A19;
+}
+
+p{
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+    text-align: center;
+}
+
+.link:hover{
+    color: #F18A19;
+}
+
+@media(min-width:768px){
+    .formulario{
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+}
