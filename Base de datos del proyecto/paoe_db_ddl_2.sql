@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2022-10-30 17:37
+-- Generated: 2022-10-30 18:41
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `paoe_db`.`cuenta` (
   `correo` VARCHAR(150) NOT NULL,
   `contrasena` VARCHAR(45) NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
-  `token` VARCHAR(45) NOT NULL,
+  `token` VARCHAR(45) NULL DEFAULT NULL,
   `ultima_sesion` DATETIME NULL DEFAULT NULL,
   `usuario` INT(12) NOT NULL,
   `perfil` VARCHAR(45) NOT NULL,
@@ -157,12 +157,12 @@ CREATE TABLE IF NOT EXISTS `paoe_db`.`cuenta` (
   INDEX `fk_cuenta_usuario_idx` (`usuario` ASC),
   INDEX `fk_cuenta_perfil_idx` (`perfil` ASC),
   UNIQUE INDEX `token_UNIQUE` (`token` ASC),
-  CONSTRAINT `fk_cuenta_usuario1`
+  CONSTRAINT `fk_cuenta_usuario`
     FOREIGN KEY (`usuario`)
     REFERENCES `paoe_db`.`usuario` (`cedula`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_cuenta_perfil1`
+  CONSTRAINT `fk_cuenta_perfil`
     FOREIGN KEY (`perfil`)
     REFERENCES `paoe_db`.`perfil` (`nombre`)
     ON DELETE NO ACTION
