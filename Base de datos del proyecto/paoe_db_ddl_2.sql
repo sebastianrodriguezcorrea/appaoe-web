@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2022-10-30 17:04
+-- Generated: 2022-10-30 17:37
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -27,16 +27,20 @@ CREATE TABLE IF NOT EXISTS `paoe_db`.`solicitante` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE TABLE IF NOT EXISTS `paoe_db`.`usuario` (
-  `cedula` INT(12) NOT NULL,
-  `nombres` VARCHAR(45) NOT NULL,
-  `apellidos` VARCHAR(45) NOT NULL,
-  `edad` INT(3) NOT NULL,
+CREATE TABLE IF NOT EXISTS `paoe_db`.`programa` (
+  `nom_programa` VARCHAR(45) NOT NULL,
+  `modalidad` VARCHAR(45) NOT NULL,
+  `telefono` INT(12) NOT NULL,
   `correo` VARCHAR(45) NOT NULL,
-  `contrasena` VARCHAR(128) NOT NULL,
-  `telefono` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`cedula`),
-  UNIQUE INDEX `correo_UNIQUE` (`correo` ASC))
+  `nom_director` VARCHAR(45) NOT NULL,
+  `facultad` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`nom_programa`),
+  INDEX `fk_programa_facultad_idx` (`facultad` ASC),
+  CONSTRAINT `fk_programa_facultad`
+    FOREIGN KEY (`facultad`)
+    REFERENCES `paoe_db`.`facultad` (`nom_facultad`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -56,20 +60,13 @@ CREATE TABLE IF NOT EXISTS `paoe_db`.`facultad` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE TABLE IF NOT EXISTS `paoe_db`.`programa` (
-  `nom_programa` VARCHAR(45) NOT NULL,
-  `modalidad` VARCHAR(45) NOT NULL,
-  `telefono` INT(12) NOT NULL,
-  `correo` VARCHAR(45) NOT NULL,
-  `nom_director` VARCHAR(45) NOT NULL,
-  `facultad` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`nom_programa`),
-  INDEX `fk_programa_facultad_idx` (`facultad` ASC),
-  CONSTRAINT `fk_programa_facultad`
-    FOREIGN KEY (`facultad`)
-    REFERENCES `paoe_db`.`facultad` (`nom_facultad`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE IF NOT EXISTS `paoe_db`.`usuario` (
+  `cedula` INT(12) NOT NULL,
+  `nombres` VARCHAR(45) NOT NULL,
+  `apellidos` VARCHAR(45) NOT NULL,
+  `edad` INT(3) NOT NULL,
+  `telefono` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`cedula`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -152,12 +149,14 @@ CREATE TABLE IF NOT EXISTS `paoe_db`.`cuenta` (
   `correo` VARCHAR(150) NOT NULL,
   `contrasena` VARCHAR(45) NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
+  `token` VARCHAR(45) NOT NULL,
   `ultima_sesion` DATETIME NULL DEFAULT NULL,
   `usuario` INT(12) NOT NULL,
   `perfil` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`correo`),
   INDEX `fk_cuenta_usuario_idx` (`usuario` ASC),
   INDEX `fk_cuenta_perfil_idx` (`perfil` ASC),
+  UNIQUE INDEX `token_UNIQUE` (`token` ASC),
   CONSTRAINT `fk_cuenta_usuario1`
     FOREIGN KEY (`usuario`)
     REFERENCES `paoe_db`.`usuario` (`cedula`)
