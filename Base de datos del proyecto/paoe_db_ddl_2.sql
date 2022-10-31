@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2022-10-30 18:41
+-- Generated: 2022-10-30 21:49
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -14,8 +14,10 @@ CREATE SCHEMA IF NOT EXISTS `paoe_db` DEFAULT CHARACTER SET utf8 ;
 CREATE TABLE IF NOT EXISTS `paoe_db`.`solicitante` (
   `documento` INT(12) NOT NULL,
   `tipo_consultante` VARCHAR(45) NOT NULL,
-  `nombres` VARCHAR(45) NOT NULL,
-  `apellidos` VARCHAR(45) NOT NULL,
+  `primer_nombre` VARCHAR(45) NOT NULL,
+  `segundo_nombre` VARCHAR(45) NOT NULL,
+  `primer_apellido` VARCHAR(45) NOT NULL,
+  `segundo_apellido` VARCHAR(45) NOT NULL,
   `telefono` INT(12) NOT NULL,
   `localidad` VARCHAR(45) NOT NULL,
   `edad` INT(3) NOT NULL,
@@ -27,20 +29,13 @@ CREATE TABLE IF NOT EXISTS `paoe_db`.`solicitante` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE TABLE IF NOT EXISTS `paoe_db`.`programa` (
-  `nom_programa` VARCHAR(45) NOT NULL,
-  `modalidad` VARCHAR(45) NOT NULL,
-  `telefono` INT(12) NOT NULL,
-  `correo` VARCHAR(45) NOT NULL,
-  `nom_director` VARCHAR(45) NOT NULL,
-  `facultad` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`nom_programa`),
-  INDEX `fk_programa_facultad_idx` (`facultad` ASC),
-  CONSTRAINT `fk_programa_facultad`
-    FOREIGN KEY (`facultad`)
-    REFERENCES `paoe_db`.`facultad` (`nom_facultad`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE IF NOT EXISTS `paoe_db`.`usuario` (
+  `cedula` INT(12) NOT NULL,
+  `nombres` VARCHAR(45) NOT NULL,
+  `apellidos` VARCHAR(45) NOT NULL,
+  `edad` INT(3) NOT NULL,
+  `telefono` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`cedula`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -60,13 +55,20 @@ CREATE TABLE IF NOT EXISTS `paoe_db`.`facultad` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE TABLE IF NOT EXISTS `paoe_db`.`usuario` (
-  `cedula` INT(12) NOT NULL,
-  `nombres` VARCHAR(45) NOT NULL,
-  `apellidos` VARCHAR(45) NOT NULL,
-  `edad` INT(3) NOT NULL,
-  `telefono` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`cedula`))
+CREATE TABLE IF NOT EXISTS `paoe_db`.`programa` (
+  `nom_programa` VARCHAR(45) NOT NULL,
+  `modalidad` VARCHAR(45) NOT NULL,
+  `telefono` INT(12) NOT NULL,
+  `correo` VARCHAR(45) NOT NULL,
+  `nom_director` VARCHAR(45) NOT NULL,
+  `facultad` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`nom_programa`),
+  INDEX `fk_programa_facultad_idx` (`facultad` ASC),
+  CONSTRAINT `fk_programa_facultad`
+    FOREIGN KEY (`facultad`)
+    REFERENCES `paoe_db`.`facultad` (`nom_facultad`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -101,16 +103,16 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE IF NOT EXISTS `paoe_db`.`programas_estudiante` (
-  `paciente` INT(12) NOT NULL,
+  `solicitante` INT(12) NOT NULL,
   `programa` VARCHAR(45) NOT NULL,
   `ingreso` DATE NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
   `egreso` DATE NULL DEFAULT NULL,
-  PRIMARY KEY (`paciente`, `programa`),
+  PRIMARY KEY (`solicitante`, `programa`),
   INDEX `fk_programas_estudiante_programa_idx` (`programa` ASC),
-  INDEX `fk_programas_estudiante_solicitante_idx` (`paciente` ASC),
-  CONSTRAINT `fk_programas_estudiante_paciente`
-    FOREIGN KEY (`paciente`)
+  INDEX `fk_programas_estudiante_solicitante_idx` (`solicitante` ASC),
+  CONSTRAINT `fk_programas_estudiante_solicitante`
+    FOREIGN KEY (`solicitante`)
     REFERENCES `paoe_db`.`solicitante` (`documento`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
