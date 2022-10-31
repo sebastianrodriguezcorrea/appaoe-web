@@ -17,7 +17,7 @@
 
             );
 
-            $sql = "SELECT correo from psicologo WHERE correo = ?";
+            $sql = "SELECT correo from cuenta WHERE correo = ?";
             $stl = $pdo->prepare($sql);
             $stl->bindValue(1, $_POST['correo']);
             $stl->execute();
@@ -35,7 +35,7 @@
                 <?php
                 $token = uniqid();
 
-                $sql = "UPDATE psicologo SET token = '$token' WHERE correo = '{$resultado['correo']}'";
+                $sql = "UPDATE cuenta SET token = '$token' WHERE correo = '{$resultado['correo']}'";
 
                 try {
 
