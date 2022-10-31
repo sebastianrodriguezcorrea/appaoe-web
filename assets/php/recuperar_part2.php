@@ -9,19 +9,22 @@
 
     if( array_key_exists( 'token', $_GET ) ) {
 
-        $sql = "SELECT cedula, nombres, apellidos FROM psicologo WHERE token = ?";
+        $sql = "SELECT correo FROM cuenta WHERE token = ?";
         $st = $pdo->prepare( $sql );
         $st->bindValue( 1, $_GET['token'] );
         $st->execute();
         if( $resultado = $st->fetch( PDO::FETCH_ASSOC )){
 
-            $sql = "UPDATE psicologo SET token = null WHERE cedula = {$resultado['cedula']};";
+            $sql = "UPDATE cuenta SET token = null WHERE correo = {$resultado['correo']};";
             $pdo->exec($sql);
             ?>
 
             <form class="formulario" action="recuperar_part2.php" method="POST">
-                <h1> Bienvenido <?php echo $resultado['nombres']," ", $resultado['apellidos']; ?></h1>
-                <input type="hidden" value="<?php echo $resultado['cedula']; ?>" name="cedula"/>
+                <?php 
+                $sql2 = "SELECT nombres, apellidos, correo FROM usuario LEFT JOIN cuenta ON usuario.cedula = cuenta.usuario WHERE token = ?";
+                ?>
+                <h1> Bienvenido <?php echo $sql2['nombres']," ", $sql2['apellidos']; ?></h1>
+                <input type="hidden" value="<?php echo $resultado['correo']; ?>" name="correo"/>
                 <div class="contenedor">
                     <div class="input-contenedor">
                         <p>Ingrese su nueva contraseña</p>
@@ -32,14 +35,14 @@
             </form>
             <?php
         }
-    }elseif ( array_key_exists( 'cedula', $_POST ) ){ ?>
+    }elseif ( array_key_exists( 'correo', $_POST ) ){ ?>
 
         <div class="contenedor">
 
             <p><a class="link" href="/appaoe-web" style="text-decoration:none">APPAOE</a><p>
 
             <?php
-                $sql = "UPDATE psicologo SET contrasena = '".password_hash($_POST['newPassword'], PASSWORD_BCRYPT)."' WHERE cedula = {$_POST['cedula']};";
+                $sql = "UPDATE cuenta SET contrasena = '".password_hash($_POST['newPassword'], PASSWORD_BCRYPT)."' WHERE correo = {$_POST['correo']};";
                 $pdo->exec($sql);
             ?>
 
