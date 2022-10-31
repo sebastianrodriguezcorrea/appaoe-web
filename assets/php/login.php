@@ -12,7 +12,7 @@
 
     if(!empty($_POST['correo']) && !empty($_POST['contrasena'])){
 
-        $records = $conn->prepare('SELECT cedula, correo, contrasena FROM psicologo WHERE correo = :correo');
+        $records = $conn->prepare('SELECT correo, contrasena FROM cuenta WHERE correo = :correo');
         $records->bindParam(':correo', $_POST['correo']);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
